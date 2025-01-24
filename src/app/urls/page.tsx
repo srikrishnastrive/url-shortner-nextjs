@@ -57,7 +57,7 @@ export default async function UrlList() {
                                             </td>
                                             <td>
                                                 <a href={`/${url.shortUrl}`}>
-                                                    {`${url.shortUrl}`}
+                                                    {`${process.env.NEXT_PUBLIC_BASE_URL}/${url.shortUrl}`}
                                                 </a>
                                             </td>
 
