@@ -8,7 +8,10 @@ export class UrlShortenerService {
         this.urlRepository = new UrlRepository();
     }
 
-    async shortenUrl (originalUrl:string) : Promise<String> {
+    async shortenUrl (originalUrl?:string) : Promise<String> {
+        if(!originalUrl){
+            return ""
+        }
         // if orginal and short url is presemt
         let url = await this.urlRepository.getUrlByOriginalUrl(originalUrl);
         if (url){
